@@ -1,0 +1,20 @@
+[opt]
+image_folder = './images'
+workers = 4
+batch_size = 10
+saved_model = './saved_models/1015_STAR-Net/best_accuracy.pth'
+character = './japanese_word/japanese_word.txt'
+sensitive = 'False'
+PAD = 'False'
+batch_max_length = 25
+imgH = 32
+imgW = 100
+rgb = 1
+Transformation = 'TPS'
+FeatureExtraction = 'ResNet'
+SequenceModeling = 'BiLSTM'
+Prediction = 'CTC'
+num_fiducial = 20
+input_channel = 1
+output_channel = 512
+hidden_size = 256
