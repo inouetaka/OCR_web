@@ -1,3 +1,5 @@
 .idea
-/venv
-app/saved_models/1015_STAR-Net/best_accuracy.pth
+venv
+*.pth
+*.pyc
+.DS_Store
