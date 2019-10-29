@@ -53,11 +53,12 @@ def index():
             # 最大長予測用
             # torch.cuda.synchronize(device)
             if 'CTC' in opt['Prediction']:
-                preds = model(image, text_for_pred).log_softmax(2)
+                preds = model(image, text_for_pred)#.log_softmax(2)
+                preds = preds.log_softmax(2)
                 # 最大確率を選択し、インデックスを文字にデコードします
                 preds_size = torch.IntTensor([preds.size(1)] * batch_size)
-                _, preds_index = preds.permute(1, 0, 2).max(2)
-                preds_index = preds_index.transpose(1, 0).contiguous().view(-1)
+                _, preds_index = preds.max(2)
+                preds_index = preds_index.view(-1)
                 preds_str = converter.decode(preds_index.data, preds_size.data)
 
             else:
@@ -107,15 +108,13 @@ def upload():
         img_array = np.asarray(bytearray(stream.read()), dtype=np.uint8)
         img = cv2.imdecode(img_array, 1)
 
-        # 変換
-        #img = canny(img)
-
         # 保存
         dt_now = datetime.now().strftime("%Y_%m_%d%_H_%M_%S_") + random_str(5)
         save_path = os.path.join(SAVE_DIR, dt_now + ".png")
         cv2.imwrite(save_path, img)
 
-        return redirect('/')
+
+    return redirect('/')
 
 
 def loader():
