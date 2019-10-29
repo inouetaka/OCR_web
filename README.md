@@ -10,5 +10,13 @@
 $ cd OCR_web/app/
 $ python app.py
 ```
+- 実行例
+![exam](https://github.com/inouetaka/OCR_web/blob/master/images/exam.png)
 
-![exam]()
+ファイル選択ボタンを押しOCRにかけたい画像を選ぶ   
+submitボタンを押下で実行
+
+## 注意
+現状、多少の角度や欠損は許容できるが、学習していないフォントやノイズがあるので失敗することが多い。    
+一つの画面に複数の文字列や複数行の文字があると確実に失敗する。   
+上記の失敗を含めた精度向上の見込みはあるが少し時間かかるかも。
