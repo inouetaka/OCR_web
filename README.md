@@ -11,3 +11,4 @@ $ cd OCR_web/app/
 $ python app.py
 ```
 
+![exam]()
