@@ -2,4 +2,5 @@
 venv
 *.pth
 *.pyc
-.DS_Store
+*.DS_Store
+*.png
