@@ -100,7 +100,7 @@ class AlignCollate(object):
 
         if self.keep_ratio_with_pad:  # Rosetta論文と同じコンセプト
             resized_max_w = self.imgW
-            transform = NormalizePAD((1, self.imgH, resized_max_w))
+            transform = NormalizePAD((3, self.imgH, resized_max_w))
 
             resized_images = []
             for image in images:
