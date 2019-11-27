@@ -5,12 +5,23 @@
   <input type="file" name="image" accept="image/png, image/jpeg">
   <button type="submit">submit</button>
 </form>
-
+    <table border="1">
+      <tr>
+        <td width="200px" align="center">image</td>
+        <td width="200px" align="center">pred</td>
+      </tr>
+    </table>
 {% if images %}
   {% for key, value in images.items() %}
     <div>
-      <img src="images/{{ key }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
-      pred => {{ value }}
+          <table border="1">
+      <tr>
+        <td width="200px" style="margin-top: 10px; vertical-align: bottom;">
+          <img src="images/{{ key }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
+        </td>
+        <td width="200px" align="center">{{ value }}</td>
+      </tr>
+    </table>
     </div>
   {% endfor %}
 {% endif %}
