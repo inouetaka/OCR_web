@@ -126,12 +126,10 @@ def loader():
         converter = AttnLabelConverter(opt['character'])
     opt['num_class'] = len(converter.character)
 
-    # if opt['rgb'] == 3:
-    #     opt['input_channel'] = 3
+    if opt['rgb'] == 3:
+         opt['input_channel'] = 3
     model = Model(opt)
-    # print('model input parameters', opt.imgH, opt.imgW, opt.num_fiducial, opt.input_channel, opt.output_channel,
-    #       opt.hidden_size, opt.num_class, opt.batch_max_length, opt.Transformation, opt.FeatureExtraction,
-    #       opt.SequenceModeling, opt.Prediction)
+
     model = torch.nn.DataParallel(model).to(device)
 
     # load model
