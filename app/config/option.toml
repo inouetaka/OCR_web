@@ -2,9 +2,9 @@
 image_folder = './images'
 workers = 4
 batch_size = 10
-saved_model = './saved_models/1015_STAR-Net_rgb_50000/best_accuracy.pth'
+saved_model = './saved_models/b32e_FT_R1204/best_accuracy.pth'
 character = './japanese_word/japanese_word.txt'
-sensitive = 'False'
+sensitive = 'True'
 PAD = 'False'
 batch_max_length = 25
 imgH = 32
